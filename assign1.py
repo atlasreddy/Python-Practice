@@ -24,11 +24,6 @@ import requests
 from math import ceil, sqrt
 
 
-logger = configure_logger()
-BASE_URL = "https://jsonplaceholder.typicode.com"
-END_POINT = "/posts"
-
-
 def configure_logger(logger_name=__name__, log_file="logger.log"):
     logging.basicConfig()
     logger = logging.getLogger(logger_name)
@@ -74,6 +69,10 @@ def get_extra_info(value):
 
 
 def main():
+    logger = configure_logger()
+    BASE_URL = "https://jsonplaceholder.typicode.com"
+    END_POINT = "/posts"
+    
     try:
         api_url = BASE_URL + END_POINT
         api_response = requests.get( url=api_url )
